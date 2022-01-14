@@ -40,3 +40,5 @@ const Account = () => {
   );
 };
 export default React.memo(Account);
+
+Account.whyDidYouRender = true;

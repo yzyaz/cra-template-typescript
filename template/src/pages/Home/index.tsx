@@ -15,3 +15,5 @@ const Home = (props: TProps) => {
   );
 };
 export default React.memo(Home);
+
+Home.whyDidYouRender = true;
