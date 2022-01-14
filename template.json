@@ -28,6 +28,7 @@
       "stylelint": "13.7.2",
       "stylelint-config-prettier": "8.0.2",
       "stylelint-config-recommended": "3.0.0",
+      "eslint": "^8.6.0",
       "@welldone-software/why-did-you-render": "^6.2.3",
       "@types/react-router-config": "^5.0.4",
       "@types/react-router-dom": "^5.3.2"
@@ -46,9 +47,13 @@
       }
     },
     "lint-staged": {
-      "*.css": "stylelint",
-      "*.less": "stylelint --syntax less",
-      "*.{jsx,js,ts,tsx,json,md,css,less}": [
+      "src/**/*.css": "stylelint",
+      "src/**/*.less": "stylelint --syntax less",
+      "src/**/*.{jsx,ts}": [],
+      "src/**/*.{jsx,js,ts,tsx}": [
+        "eslint --max-warnings 0"
+      ],
+      "src/**/*.{jsx,js,ts,tsx,json,md,css,less}": [
         "prettier --write"
       ]
     }
