@@ -7,6 +7,7 @@ interface IProps {}
 type TProps = RouteConfigComponentProps<IProps>;
 
 const Home = (props: TProps) => {
+  console.log('process', process.env);
   return (
     <>
       <div className={styles.home}>Home</div>
