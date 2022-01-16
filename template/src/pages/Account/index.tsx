@@ -9,10 +9,14 @@ const Account = () => {
   const countState = useSelector((state) => state.count.num);
 
   const loadingObj = useSelector(
-    (rootState) => rootState.loading.effects.count.incrementAsync
+    (rootState) => rootState.loading.effects.count.fetchWn
   );
+  
+  React.useEffect(() => {
+    dispatch.count.fetchWn();
+  }, [dispatch.count]);
 
-  console.log('loadingObj', loadingObj);
+  console.log('loadingObj', loadingObj, loadingObj.error);
 
   return (
     <div className={styles.account}>

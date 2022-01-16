@@ -6,6 +6,7 @@
       "react-router-dom": "^5.3.0",
       "react-router": "^5.2.1",
       "axios": "^0.24.0",
+      "redaxios": "^0.4.1",
       "immer": "^9.0.12",
       "@rematch/core": "^2.2.0",
       "@rematch/immer": "^2.1.3",

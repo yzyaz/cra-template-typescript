@@ -1,14 +1,19 @@
 import { createModel } from '@rematch/core';
+import { apiGetWn } from 'src/api/count';
 
 export const count = createModel()({
   state: {
     num: 0,
     str: 's',
+    req: {} as any,
   }, // initial state
   reducers: {
     // handle state changes with pure functions
     increment(state, payload: number) {
       state.num = state.num + payload;
+    },
+    changeReq(state, payload: any) {
+      state.req = payload;
     },
   },
   effects: (dispatch) => ({
@@ -29,6 +34,12 @@ export const count = createModel()({
         )
       );
       dispatch.count.increment(payload * 2);
+    },
+
+    // 数据请求
+    async fetchWn() {
+      let req = await apiGetWn();
+      dispatch.count.changeReq(req);
     },
   }),
 });
