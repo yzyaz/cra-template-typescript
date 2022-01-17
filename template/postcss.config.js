@@ -8,37 +8,40 @@ const useTailwind = fs.existsSync(
   path.join(resolveApp('.'), 'tailwind.config.js')
 );
 
-module.exports = {
-  plugins: !useTailwind
-    ? [
-        'postcss-flexbugs-fixes',
-        [
-          'postcss-preset-env',
-          {
-            autoprefixer: {
-              flexbox: 'no-2009',
-            },
-            stage: 3,
+const defaultPlugin = !useTailwind
+  ? [
+      'postcss-flexbugs-fixes',
+      [
+        'postcss-preset-env',
+        {
+          autoprefixer: {
+            flexbox: 'no-2009',
           },
-        ],
-        // Adds PostCSS Normalize as the reset css with default options,
-        // so that it honors browserslist config in package.json
-        // which in turn let's users customize the target behavior as per their needs.
-        'postcss-normalize',
-        // 示列, px转vm
-        // ['postcss-px-to-viewport', {}],
-      ]
-    : [
-        'tailwindcss',
-        'postcss-flexbugs-fixes',
-        [
-          'postcss-preset-env',
-          {
-            autoprefixer: {
-              flexbox: 'no-2009',
-            },
-            stage: 3,
-          },
-        ],
+          stage: 3,
+        },
       ],
+      // Adds PostCSS Normalize as the reset css with default options,
+      // so that it honors browserslist config in package.json
+      // which in turn let's users customize the target behavior as per their needs.
+      'postcss-normalize',
+    ]
+  : [
+      'tailwindcss',
+      'postcss-flexbugs-fixes',
+      [
+        'postcss-preset-env',
+        {
+          autoprefixer: {
+            flexbox: 'no-2009',
+          },
+          stage: 3,
+        },
+      ],
+    ];
+
+module.exports = {
+  plugins: defaultPlugin.concat([
+    // 示列, px转vm
+    // ['postcss-px-to-viewport', {}],
+  ]),
 };
