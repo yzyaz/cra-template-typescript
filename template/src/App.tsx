@@ -5,7 +5,7 @@ import { renderRoutes } from 'react-router-config';
 import routes from './route';
 import { Provider } from 'react-redux';
 import store from './store';
-import './App.css';
+import './App.less';
 
 function App() {
   return (
