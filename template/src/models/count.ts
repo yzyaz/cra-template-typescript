@@ -1,7 +1,8 @@
 import { createModel } from '@rematch/core';
 import { apiGetWn } from 'src/api/count';
+import { RootModel } from '.';
 
-export const count = createModel()({
+export const count = createModel<RootModel>()({
   state: {
     num: 0,
     str: 's',
