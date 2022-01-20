@@ -39,6 +39,14 @@ const Account = () => {
         >
           点击触发dispatch异步
         </button>
+        <br />
+        <button
+          onClick={() => {
+            dispatch.count.fetchWn();
+          }}
+        >
+          点击请求数据
+        </button>
       </div>
     </div>
   );
