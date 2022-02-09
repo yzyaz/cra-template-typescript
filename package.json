@@ -12,18 +12,17 @@
     "yPublishR": "npm publish --registry http://106.52.76.36:4873/",
     "postversion": "npm run yPublish && npm run  yPublishR && git push"
   },
-  "description": "The base TypeScript template for Create React App.",
+  "description": "自定义react脚手架模板, The base TypeScript template for Create React App.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/create-react-app.git",
-    "directory": "packages/cra-template-typescript"
+    "url": "https://github.com/yzyaz/cra-template-typescript"
   },
   "license": "MIT",
   "engines": {
     "node": ">=14"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
+    "url": "https://github.com/yzyaz/cra-template-typescript/issues"
   },
   "files": [
     "template",
