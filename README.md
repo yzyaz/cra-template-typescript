@@ -1,5 +1,7 @@
 # cra-template-typescript
 
+自定义react脚手架模板
+
 This is the official TypeScript template for [Create React App](https://github.com/facebook/create-react-app).
 
 To use this template, add `--template typescript` when creating a new app.
