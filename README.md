@@ -53,23 +53,28 @@ For more information, please refer to:
 ### 提交规范
 使用husky, 对提交时进行规范检查, 包含: 
 + commitlint: 检查提交规范, 不规范则退出, 规范如下:
- \<type>(\<scope>): \<subject>
-  │       │             │
-  │       │             └─⫸ 描述：指的是对代码变更的简短总结
-  │       │
-  │       └─⫸ 作用域: animations|bazel|benchpress|common|compiler|...
-  │
-  └─⫸ 提交类型：build|ci|docs|feat|fix|perf|refactor|test...（必须, 类型见.czrc文件）
+
+  ```text
+   <type>(<scope>): <subject>
+    │       │             │
+    │       │             └─⫸ 描述：指的是对代码变更的简短总结
+    │       │
+    │       └─⫸ 作用域: animations|bazel|benchpress|common|compiler|...
+    │
+    └─⫸ 提交类型：build|ci|docs|feat|fix|perf|refactor|test...（必须, 类型见.czrc文件）
+  ```
+
   可手敲, 也可使用这两个命令进行规范提交
+
   ```sh
   yarn commit
   #or
   npm run commit
   ```
+  
 + eslint: 检查错误, 超过0个提示则退出
 + stylelint: 检查错误, 有报错则退出
 + prettier: 使用prettier进行格式化
-
 
 ### commit记录生成
 ```sh
